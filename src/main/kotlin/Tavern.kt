@@ -1,8 +1,11 @@
 fun main() {
-    var beverage = readLine()?.let {
-        if (it.isNotBlank()){
-           it.replaceFirstChar { it.titlecase() }
-        } else {"Buttered Ale"}
+    var beverage = readLine()
+
+    if (beverage == null) {
+        println("I can't do that without crashing - beverage was null!")
+    } else {
+        beverage = beverage.replaceFirstChar { it.titlecase() }
     }
-println(beverage)
+
+    println(beverage)
 }
